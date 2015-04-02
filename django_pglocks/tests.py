@@ -47,8 +47,9 @@ class PgLocksTests(TransactionTestCase):
 
     def test_contextdecorator(self):
         @advisory_lock(123)
-        def locked():
+        def assert_decorator_locked():
             self.assertNumLocks(1)
         self.assertNumLocks(0)
-        locked()
+        assert_decorator_locked()
         self.assertNumLocks(0)
+        assert_decorator_locked()

@@ -2,7 +2,6 @@
 
 from setuptools import setup
 
-
 def get_long_description():
     """
     Return the contents of the README file.
@@ -11,13 +10,6 @@ def get_long_description():
         return open('README.rst').read()
     except:
         pass  # Required to install using pip (won't have README then)
-
-_requires = [
-    'contextdecorator>=0.10.0',
-    'psycopg2>=2.5',
-    'six>=1.9.0',
-    'django>=1.4',
-]
 
 setup(
     name = 'django-pglocks',
@@ -42,6 +34,10 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Topic :: Software Development',
     ],
-    setup_requires = _requires,
-    install_requires = _requires,
+    install_requires = [
+        'contextdecorator>=0.10.0',
+        'psycopg2>=2.5',
+        'six>=1.9.0',
+        'django>=1.4',
+    ]
 )
