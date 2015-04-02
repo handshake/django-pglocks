@@ -1,35 +1,33 @@
-*.py[cod]
-
-# C extensions
-*.so
-
-# Packages
 *.egg
-*.egg-info
-dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
-.installed.cfg
-lib
-lib64
-
-# Installer logs
-pip-log.txt
-
-# Unit test / coverage reports
-.coverage
-.tox
-nosetests.xml
-
-# Translations
-*.mo
-
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
+*.egg-info*
+*.pyc
+*.mode1v3
+*.pbxuser
+*~
+*.log
+*.pid
+~*
+*.pgdump
+*.patch
+*.dump
+#*
+*.box
+*.db
+[.]*.sw[mnop]
+.DS_Store*
+djserver/backbone/dist/
+djserver/env/
+djserver/node_env/
+djserver/backbone/assets/js/views/alerts.js
+djserver/backbone/assets/js/views/validatable.js
+djserver/backbone/assets/js/views/quote_lines.js
+djserver/backbone/assets/js/libs/swagger-ui.js
+djserver/backbone/assets/js/libs/bootstrap-jquery.js
+djserver/backbone/assets/js/views/popover.js
+djserver/backbone/assets/js/views/help_popover.js
+djserver/backbone/assets/js/views/base_view.js
+djserver/start_server.sh
+.git-branch
+.vagrant
+.*.swp
+*.idea

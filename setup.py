@@ -2,7 +2,6 @@
 
 from setuptools import setup
 
-import django_pglocks
 
 def get_long_description():
     """
@@ -15,12 +14,15 @@ def get_long_description():
 
 _requires = [
     'contextdecorator>=0.10.0',
+    'psycopg2>=2.5',
+    'six>=1.9.0',
+    'django>=1.4',
 ]
 
 setup(
     name = 'django-pglocks',
-    version = django_pglocks.__version__,
-    description = "django_pglocks provides useful context managers for advisory locks for PostgreSQL.",
+    version = '1.0.3',
+    description = "django_pglocks provides useful context managers and decorators for advisory locks for PostgreSQL.",
     long_description = get_long_description(),
     author = "Christophe Pettus",
     author_email = "xof@thebuild.com",
