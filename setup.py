@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from distutils.core import setup
+from setuptools import setup
 
 import django_pglocks
 
@@ -12,6 +12,10 @@ def get_long_description():
         return open('README.rst').read()
     except:
         pass  # Required to install using pip (won't have README then)
+
+_requires = [
+    'contextdecorator>=0.10.0',
+]
 
 setup(
     name = 'django-pglocks',
@@ -35,5 +39,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Topic :: Software Development',
-    ]
+    ],
+    setup_requires = _requires,
+    install_requires = _requires,
 )
