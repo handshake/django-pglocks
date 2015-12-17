@@ -12,7 +12,7 @@ class advisory_lock(ContextDecorator):
         self.using = using
 
     def __enter__(self):
-        from django.db import DEFAULT_DB_ALIAS, connections
+        from django.db import DEFAULT_DB_ALIAS, connection
         import six
 
         if self.using is None:
@@ -67,7 +67,7 @@ class advisory_lock(ContextDecorator):
         acquire_params = ( function_name, ) + self.params
 
         command = self.base % acquire_params
-        self.cursor = connections[self.using].cursor()
+        self.cursor = connection.connection.cursor()
 
         self.cursor.execute(command)
 
