@@ -79,7 +79,10 @@ class advisory_lock(ContextDecorator):
         return self.acquired
 
     def __exit__(self, *exc):
-        if self.acquired:
+
+        from django.db import connection
+        
+        if self.acquired and not connection.needs_rollback:
             release_params = ( self.release_function_name, ) + self.params
 
             command = self.base % release_params
